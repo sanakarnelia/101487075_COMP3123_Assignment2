@@ -1,0 +1,50 @@
+/* Center everything inside the App wrapper */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* because index.css is setting light pink */
+}
+
+/* Remove React logo default sizing/animation */
+.App-logo {
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+/* Disable default spinning animation */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: none;
+  }
+}
+
+/* Main header section */
+.App-header {
+  background: transparent; /* remove dark background */
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: calc(12px + 1vmin);
+  color: #c2185b; /* match your new theme color */
+}
+
+/* Links */
+.App-link {
+  color: #c2185b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.App-link:hover {
+  text-decoration: underline;
+}
+
+/* Remove unused keyframes (optional) */
+@keyframes App-logo-spin {}

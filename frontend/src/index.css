@@ -1,0 +1,249 @@
+/* Make app take full height */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Global background + font */
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #ffe4ef; /* light soft pink */
+}
+
+/* --- Navigation Bar --- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #c2185b; /* deep pink navbar */
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo .logo-link {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-left: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Logout button in navbar */
+.btn.danger {
+  background: #f44336;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+.btn.danger:hover {
+  background: #d32f2f;
+}
+
+/* --- Main Container (list page, etc.) --- */
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center; /* make main screen visually centered */
+}
+
+/* Heading */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #c2185b;
+}
+
+/* Add Employee button link */
+.container > a {
+  display: inline-block;
+  margin-bottom: 15px;
+  background: #c2185b;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container > a:hover {
+  background: #a31548;
+}
+
+/* --- Table Styles --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #c2185b;
+  color: #fff;
+  font-weight: 500;
+}
+
+tr:hover {
+  background: #ffe0ec;
+}
+
+/* Buttons (global) */
+button {
+  background: #c2185b;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+button:hover {
+  background: #a31548;
+}
+
+button.danger {
+  background: #f44336;
+}
+
+button.danger:hover {
+  background: #d32f2f;
+}
+
+/* Links in table */
+td a {
+  margin-right: 8px;
+  color: #c2185b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+/* --- Avatar Images --- */
+.avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-large {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* --- Centered Forms / Cards --- */
+.centered-card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* Form Heading */
+.centered-card h2 {
+  text-align: center;
+  color: #c2185b;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Inputs */
+.centered-card form input,
+.centered-card form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.centered-card form button {
+  width: 100%;
+  background: #c2185b;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.centered-card form button:hover {
+  background: #a31548;
+}
+
+/* Details rows */
+.details-row p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.details-row strong {
+  color: #c2185b;
+}
+
+/* Back button in details */
+.centered-card .btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #c2185b;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.centered-card .btn:hover {
+  background: #a31548;
+}
+
+/* Optional: center generic App wrapper if used */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

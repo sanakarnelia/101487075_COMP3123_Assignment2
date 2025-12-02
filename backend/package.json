@@ -1,30 +1,17 @@
 {
-  "name": "101487075_comp3123_assignment1",
+  "name": "assignment2-backend",
   "version": "1.0.0",
-  "description": "Student Name:- Sana Karnelia\r Student id:- 101487075",
-  "main": "index.js",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sanakarnelia/101487075_COMP3123_Assignment1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sanakarnelia/101487075_COMP3123_Assignment1/issues"
-  },
-  "homepage": "https://github.com/sanakarnelia/101487075_COMP3123_Assignment1#readme",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
-    "mongoose": "^8.19.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "mongoose": "^8.0.0",
+    "jsonwebtoken": "^9.0.2"
   }
 }

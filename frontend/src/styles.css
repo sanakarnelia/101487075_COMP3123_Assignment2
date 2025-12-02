@@ -1,0 +1,285 @@
+/* --- Reset & base --- */
+body {
+  font-family: Inter, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f8fa;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #d219a1;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo .logo-link {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-left: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.btn.danger {
+  background: #d32f2f;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+.btn.danger:hover {
+  background: #b71c1c;
+}
+
+/* --- Main container --- */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Center the form card */
+.centered-card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+}
+
+/* Form heading */
+.centered-card h2 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Form inputs */
+.centered-card form input,
+.centered-card form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Input placeholders */
+.centered-card form input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Submit button */
+.centered-card form button {
+  width: 100%;
+  background: #1976d2;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.centered-card form button:hover {
+  background: #115293;
+}
+
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Page heading */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #1976d2;
+}
+
+/* Add Employee button/link */
+.container > a {
+  display: inline-block;
+  margin-bottom: 15px;
+  background: #1976d2;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container > a:hover {
+  background: #115293;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+}
+
+tr:hover {
+  background: #f1f7ff;
+}
+
+/* Action buttons */
+button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+button:hover {
+  background: #115293;
+}
+
+button.danger {
+  background: #d32f2f;
+}
+
+button.danger:hover {
+  background: #b71c1c;
+}
+
+/* Links inside table actions */
+td a {
+  margin-right: 8px;
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+/* --- Avatar images --- */
+.avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-large {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* --- Toolbar for actions --- */
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* --- Centering forms and cards --- */
+.centered-card {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+/* Reuse the centered card style for details */
+.centered-card {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+}
+
+/* Heading */
+.centered-card h2 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Details row styling */
+.details-row p {
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Labels bold */
+.details-row strong {
+  color: #1976d2;
+}
+
+/* Back button */
+.centered-card .btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #1976d2;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.centered-card .btn:hover {
+  background: #115293;
+}

@@ -1,18 +1,11 @@
+export const employees = [];
 
-import Employee from "../model/employee.js"
 
-//view all
-export const getEmployees = async (req, res) => {
-  try {
-    const employees = await Employee.find();
-    res.status(200).json(employees);
-  } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
-  }
+export const getEmployees = (req, res) => {
+  res.status(200).json(employees);
 };
 
-//create
-export const createEmployee = async (req, res) => {
+export const createEmployee = (req, res) => {
   try {
     const {
       first_name,
@@ -25,85 +18,78 @@ export const createEmployee = async (req, res) => {
     } = req.body;
 
     if (!first_name || !last_name || !email || !position || !salary || !department) {
-      return res.status(400).json({
-        message: "All fields are required! Please enter all information.",
-      });
+      return res.status(400).json({ message: "All fields are required" });
     }
 
-    const newEmployee = new Employee({
+    const newEmployee = {
+      employee_id: employees.length + 1,
       first_name,
       last_name,
       email,
       position,
       salary,
-      date_of_joining,
+      date_of_joining: date_of_joining || new Date(),
       department,
-    });
+    };
 
-    await newEmployee.save();
+    employees.push(newEmployee);
 
     res.status(201).json({
-      message: "Employee was created",
-      employee_id: newEmployee._id,
+      message: "Employee created successfully.",
+      employee_id: newEmployee.employee_id,
     });
   } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+    res.status(500).json({ message: err.message });
   }
 };
 
-//view by specific id
-export const getEmployeeById = async (req, res) => {
-  try {
-    const { eid } = req.params;
-    const employee = await Employee.findById(eid);
+export const getEmployeeById = (req, res) => {
+  const { eid } = req.params;
+  const employee = employees.find((e) => e.employee_id == eid);
 
-    if (!employee) {
-      return res.status(404).json({ message: "no matching employee is found" });
-    }
-
-    res.status(200).json(employee);
-  } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+  if (!employee) {
+    return res.status(404).json({ message: "Employee not found." });
   }
+
+  res.status(200).json(employee);
 };
 
-// Update employee by ID
-export const updateEmployee = async (req, res) => {
-  try {
-    const { eid } = req.params;
 
-    const updatedEmployee = await Employee.findByIdAndUpdate(
-      eid,
-      { ...req.body, updated_at: new Date() },
-      { new: true }
-    );
+export const updateEmployee = (req, res) => {
+  const { eid } = req.params;
+  const employee = employees.find((e) => e.employee_id == eid);
 
-    if (!updatedEmployee) {
-      return res.status(404).json({ message: "no matching employee is found" });
-    }
-
-    res.status(200).json({ message: "Employee details updated successfully." });
-  } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+  if (!employee) {
+    return res.status(404).json({ message: "Employee not found." });
   }
+
+  const { first_name, last_name, email, position, salary, date_of_joining, department } =
+    req.body;
+
+
+  if (first_name) employee.first_name = first_name;
+  if (last_name) employee.last_name = last_name;
+  if (email) employee.email = email;
+  if (position) employee.position = position;
+  if (salary) employee.salary = salary;
+  if (date_of_joining) employee.date_of_joining = date_of_joining;
+  if (department) employee.department = department;
+
+  employee.updated_at = new Date();
+
+  res.status(200).json({ message: "Employee details updated successfully." });
 };
 
-// Delete employee by ID
-export const deleteEmployee = async (req, res) => {
-  try {
-    const { eid } = req.query;
 
-    const deletedEmployee = await Employee.findByIdAndDelete(eid);
+export const deleteEmployee = (req, res) => {
+  const { eid } = req.query;
 
-    if (!deletedEmployee) {
-      return res.status(404).json({ message: "Employee not found" });
-    }
+  const index = employees.findIndex((e) => e.employee_id == eid);
 
-    res.status(200).json({ message: "Employee deleted successfully." });
-  } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message});
-}
+  if (index === -1) {
+    return res.status(404).json({ message: "Employee not found." });
+  }
+
+  employees.splice(index, 1);
+  res.status(200).json({ message: "Employee deleted successfully." });
 };
-
-
-

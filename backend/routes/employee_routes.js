@@ -1,16 +1,17 @@
-
 import express from "express";
-import { getEmployees, createEmployee, updateEmployee, deleteEmployee } from "../controller/employeeController.js";
+import { getEmployees, createEmployee,  getEmployeeById,
+  updateEmployee,
+  deleteEmployee, } from "../controller/employeeController.js";
 
-const routes = express.Router();
+const router = express.Router();
 
+router.get("/employees", getEmployees);
 
-routes.get("/employees", getEmployees);
-routes.post("/employees", createEmployee);
-routes.get("/employees/:eid", getEmployees);
-routes.put("/employees/:eid", updateEmployee);
-routes.delete("/employees", deleteEmployee);
+router.post("/employees", createEmployee);
 
+router.get("/employees/:eid", getEmployeeById);
 
+router.put("/employees/:eid", updateEmployee);
 
-export default routes;
+router.delete("/employees", deleteEmployee);
+export default router;
